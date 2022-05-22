@@ -1,0 +1,42 @@
+DESCRIPTION:
+------------
+
+This is a simple effect for rendering 2d clouds in Unity. It uses a plane, an unlit shader, and two textures.
+
+
+HOW TO USE:
+-----------
+
+Import the custom PACKAGE into your project. (Assets > Import Package > Custom Package)
+Drag the included PREFAB into your scene and adjust the material properties - that's it!
+The individual files are also included in the zip file if you can't use the package.
+
+
+GENERAL NOTES:
+--------------
+
+To avoid clipping, increase the camera's "far clipping plane" and adjust the Fade Distance/Strength properties on the shader material.
+
+Use the Color property to adjust opacity and color.
+
+Textures are included for convenience, use any textures you want.  Make sure the texture's Import Settings are set to "Repeat".  Turn off compression for better quality.
+
+Don't forget to adjust the Tiling properties of the textures in the Material properties, to your liking.
+
+
+UPGRADE NOTES:
+--------------
+2020-07-5
+- Fixed color banding/cut-off issue by replacing saturate function with clamp function.
+
+2020-11-3
+- Added a more photographic texture for the clouds and updated the prefab. 
+
+
+LICENSE:
+--------
+
+Use at your own risk.  You may modify this code, use it in your personal or commercial projects, and redistribute, granted credit is given. Created by Chris Cunningham.
+
+------------------------------------------------------------------------
+Made with Unity 5.6.5f1 also tested successfully in Unity 2018 and 2019.

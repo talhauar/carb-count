@@ -1,0 +1,18 @@
+{
+    "name": "UIParticleEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:2e289f5c42da9604e831afe0a636d50a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

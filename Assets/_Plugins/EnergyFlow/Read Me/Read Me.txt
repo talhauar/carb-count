@@ -1,0 +1,33 @@
+Energy Flow
+
+This custom shader creates a standard diffuse bump texture with an underlying self illuminated texture that can pan in any UV direction. It also has an cube map with slider reflection amount slider control.
+
+This shader also works well with Unity standard Glow post effect to enhance the energy lighting effect (Glow is Unity Pro Only)
+
+
+Custom shader properties are:
+
+Main Color – Main Color
+
+Gloss – Amount of gloss
+
+Spec Color – Specular Color
+
+Reflect Power – Amount of reflection map
+
+Base texture (A) Mask – Base texture, transparency controls the energy texture mask
+
+UV Y Speed – Speed of energy texture pan in V (Y axis), center of slider = 0
+
+UV X Speed – Speed of energy texture pan in U (X axis) , center of slider = 0
+
+Energy Color – Color applied to the energy texture (Alpha controls standard glow)
+
+Normal – Normal map to add surface detail
+
+Reflect Cube – Reflection map
+
+
+
+
+Nikolaus Kraus

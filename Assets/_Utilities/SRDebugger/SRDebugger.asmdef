@@ -1,0 +1,22 @@
+{
+    "name": "SRDebugger",
+    "rootNamespace": "",
+    "references": [
+        "GUID:fc25d48ce4d1e734db22ecddc633e29c",
+        "GUID:43e345d7fb897e549a6f6cdb8b67feaa",
+        "GUID:6b19b89ae1f0ec144bbaaaa58b9e354a",
+        "GUID:309de805d4a29394391698e16ed9387a",
+        "GUID:0d3f7884f200f5a459adba5519264190",
+        "GUID:1340cb163ac14544090f566e64f08240",
+        "GUID:40883fec6ac8f374186ccf635ba06c41"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
