@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
 
-public class UserData : Saveable<UserData>
+public class UserInfosData : Saveable<UserInfosData>
 {
     public string Name = " ";
     public string Surname = " ";
