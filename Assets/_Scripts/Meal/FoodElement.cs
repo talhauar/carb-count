@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 public class FoodElement : MonoBehaviour
 {
-    [SerializeField] private Image foodImage;
+    [SerializeField] private RawImage foodImage;
     [SerializeField] private TMP_Text foodName;
     [SerializeField] private TMP_InputField foodAmountInput;
     [SerializeField] private TMP_Dropdown amountTypeDropDown;
@@ -21,7 +22,7 @@ public class FoodElement : MonoBehaviour
     public void SetupFood(Food food)
     {
         _food = food;
-        foodImage.sprite = food.FoodImage;
+        foodImage.texture = food.GetTexture();
         foodName.text = food.FoodName;
     }
 
@@ -29,6 +30,8 @@ public class FoodElement : MonoBehaviour
     {
         _food = meal.food;
         _amount = meal.amount;
+        foodName.text = _food.FoodName;
+        foodImage.texture = _food.GetTexture();
         amountTypeDropDown.value = (int)meal.amountType;
         OnAmountTypeChanged((int)meal.amountType);
         OnAmountChanged(meal.amount.ToString());

@@ -15,5 +15,5 @@ MonoBehaviour:
   DatabaseTable: userTest
   UserDataTable: userTable
   GameSessionTable: sessionTable
-  MealHistoryTable: mealHistoryTable
-  AllFoodsTable: allFoodsTable
+  MealHistoryTable: mealTable
+  AllFoodsTable: foodTable

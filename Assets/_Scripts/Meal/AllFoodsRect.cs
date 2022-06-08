@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MealsHistoryRect : Utilities.AutoSingleton<MealsHistoryRect> 
+public class AllFoodsRect : Utilities.AutoSingleton<AllFoodsRect>
 {
     [SerializeField] private RectTransform contentRect;
     [SerializeField] private GameObject foodElementPrefab;
@@ -18,12 +18,12 @@ public class MealsHistoryRect : Utilities.AutoSingleton<MealsHistoryRect>
         {
             Destroy(child.gameObject);
         }
-        
+
         if (!AllFoodsManager.Instance.Ready) return;
-        
-        foreach (FoodMeal meal in MealData.Data.FoodHistory)
+
+        foreach (Food food in AllFoodsManager.Instance.AllFoods)
         {
-            Instantiate(foodElementPrefab, contentRect).GetComponent<FoodElement>().SetupMeal(meal);
+            Instantiate(foodElementPrefab, contentRect).GetComponent<FoodElement>().SetupFood(food);
         }
     }
 }

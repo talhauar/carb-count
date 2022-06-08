@@ -64,6 +64,7 @@ public class DatabaseManager : ScriptableSingleton<DatabaseManager>
             _database = _client.GetDatabase(dbName);
             CurrentDBConnectionType = ConnectionType.Connected;
             AccountManager.Instance.CheckUser();
+            AllFoodsManager.DownloadAllFoods();
         }
         catch (Exception)
         {
