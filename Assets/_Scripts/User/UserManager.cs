@@ -5,6 +5,37 @@ using Utilities;
 
 public class UserManager : AutoSingleton<UserManager>
 {
+    [SerializeField] private TMPro.TMP_InputField nameText;
+    [SerializeField] private TMPro.TMP_InputField surNameText;
+    [SerializeField] private TMPro.TMP_InputField ageText;
+    [SerializeField] private TMPro.TMP_InputField weightText;
+    [SerializeField] private TMPro.TMP_InputField heightText;
+
+
+    public void Start()
+    {
+        if (UserInfosData.Data.Name != "")
+        {
+            nameText.text = UserInfosData.Data.Name;
+        }
+        if (UserInfosData.Data.Surname != "")
+        {
+            surNameText.text = UserInfosData.Data.Surname;
+        }
+        if (UserInfosData.Data.Age != 0)
+        {
+            ageText.text = UserInfosData.Data.Age.ToString();
+        }
+        if (UserInfosData.Data.Weight != 0)
+        {
+            weightText.text = UserInfosData.Data.Weight.ToString();
+        }
+        if (UserInfosData.Data.Height != 0)
+        {
+            heightText.text = UserInfosData.Data.Height.ToString();
+        }
+    }
+
     public void SetUserData(UserInfosData userData)
     {
         UserInfosData.Data.Name = userData.Name;
@@ -18,5 +49,40 @@ public class UserManager : AutoSingleton<UserManager>
     public void DeleteUserData()
     {
         UserInfosData.DeleteSave();
+    }
+
+    public void SetUserName(string name)
+    {
+        if (name == "") return;
+        UserInfosData.Data.Name = name;
+        UserInfosData.Data.Save();
+    }
+
+    public void SetUserSurname(string surname)
+    {
+        if (surname == "") return;        
+        UserInfosData.Data.Surname = surname;
+        UserInfosData.Data.Save();
+    }
+    
+    public void SetUserAge(string age)
+    {
+        if (age == "") return;
+        UserInfosData.Data.Age = int.Parse(age);
+        UserInfosData.Data.Save();
+    }
+
+    public void SetUserWeight(string weight)
+    {
+        if (weight == "") return;
+        UserInfosData.Data.Weight = int.Parse(weight);
+        UserInfosData.Data.Save();
+    }
+
+    public void SetUserHeight(string height)
+    {
+        if (height == "") return;
+        UserInfosData.Data.Height = int.Parse(height);
+        UserInfosData.Data.Save();
     }
 }
