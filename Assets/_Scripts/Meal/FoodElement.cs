@@ -20,7 +20,7 @@ public class FoodElement : MonoBehaviour
 
     private string _amountTextAdd = "g";
     private int _amount = 100;
-    private Food _food;
+    public Food _food;
     private FoodMeal _meal;
 
 

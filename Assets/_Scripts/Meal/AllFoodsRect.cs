@@ -26,4 +26,19 @@ public class AllFoodsRect : Utilities.AutoSingleton<AllFoodsRect>
             Instantiate(foodElementPrefab, contentRect).GetComponent<FoodElement>().SetupFood(food);
         }
     }
+
+    public void Search(string searchText)
+    {
+        foreach (Transform child in contentRect)
+        {
+            if (child.GetComponent<FoodElement>()._food.FoodName.ToLower().Contains(searchText.ToLower()))
+            {
+                child.gameObject.SetActive(true);
+            }
+            else
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+    }
 }
