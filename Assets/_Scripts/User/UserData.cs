@@ -10,4 +10,5 @@ public class UserInfosData : Saveable<UserInfosData>
     public int Age;
     public float Weight;
     public float Height;
+    public int carbPerDay = 2000;
 }

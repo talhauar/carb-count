@@ -52,6 +52,7 @@ public class FoodElement : MonoBehaviour
     {
         _amount = int.Parse(GetNumbers(newAmount));
         foodAmountInput.text = _amount.ToString() + " " + _amountTextAdd;
+        carbs.text = CarbCalculator.CarbCount(TextToAmountType(amountTypeDropDown.captionText.text), _amount, _food.CarbPerGram, _food.CarbPerSession).ToString() + " g";
     }
 
     public void ResetDropDown()

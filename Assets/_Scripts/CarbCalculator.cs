@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CarbCalculator : MonoBehaviour
 {
+    
+    
     public static int CarbCount(FoodAmountType type, int amount, float carbPerGram, float carbPerSession)
     {
         int multiplier = 1;
