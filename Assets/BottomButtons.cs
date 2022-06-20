@@ -15,10 +15,12 @@ public class BottomButtons : MonoBehaviour
 
     public Color clickedColor;
 
+    private Color defaultColor;
     private int currentIndex = -1;
 
     private void Awake()
     {
+        defaultColor = buttonsImages[0].color;
         OnClick(0);
     }
 
@@ -26,7 +28,7 @@ public class BottomButtons : MonoBehaviour
     public void OnClick(int buttonIndex)
     {
         if (currentIndex == buttonIndex) return;
-        WhiteAll();
+        ReserColorToDefaultAll();
         currentIndex = buttonIndex;
         topPageName.text = buttonTexts[currentIndex].text;
         buttonsImages[currentIndex].color = clickedColor;
@@ -34,7 +36,7 @@ public class BottomButtons : MonoBehaviour
         objectsToActivateOnClick[currentIndex].SetActive(true);
     }
 
-    private void WhiteAll()
+    private void ReserColorToDefaultAll()
     {
         foreach (GameObject panel in objectsToActivateOnClick)
         {
@@ -42,11 +44,11 @@ public class BottomButtons : MonoBehaviour
         }
         foreach (var button in buttonsImages)
         {
-            button.color = Color.white;
+            button.color = defaultColor;
         }
         foreach (var text in buttonTexts)
         {
-            text.color = Color.white;
+            text.color = defaultColor;
         }
     }
 }
