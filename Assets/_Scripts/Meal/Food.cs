@@ -92,6 +92,34 @@ public class FoodMeal
         this.amountType = _amountType;
         this.food = _food;
     }
+
+    public string GetFoodUnitText()
+    {
+        switch (amountType)
+        {
+            case FoodAmountType.Gram:
+                return "gr";
+                break;
+            case FoodAmountType.Kilogram:
+                return "kg";
+                break;
+            case FoodAmountType.Mililitre:
+                return "ml";
+                break;
+            case FoodAmountType.Litre:
+                return "l";
+                break;
+            case FoodAmountType.Porsiyon:
+                break;
+            case FoodAmountType.Adet:
+                break;
+            case FoodAmountType.Bardak:
+                break;
+            default:
+                break;
+        }
+        return "";
+    }
 }
 
 public enum FoodAmountType

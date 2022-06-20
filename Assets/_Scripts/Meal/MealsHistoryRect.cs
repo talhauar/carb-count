@@ -23,7 +23,7 @@ public class MealsHistoryRect : Utilities.AutoSingleton<MealsHistoryRect>
         
         foreach (FoodMeal meal in MealData.Data.FoodHistory)
         {
-            Instantiate(foodElementPrefab, contentRect).GetComponent<FoodElement>().SetupMeal(meal);
+            Instantiate(foodElementPrefab, contentRect).GetComponent<MealElement>().SetupMeal(meal);
         }
     }
 }

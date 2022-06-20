@@ -15,7 +15,7 @@ public class CarbSlider : MonoBehaviour
     {
         CountCarbEaten();
 
-        carbText.text = _carbEaten.ToString() + " / " + UserInfosData.Data.carbPerDay.ToString();
+        carbText.text = _carbEaten.ToString() + " gr / " + UserInfosData.Data.carbPerDay.ToString()+" gr";
         sliderImage.fillAmount = 0;
         _fillAmount = _carbEaten / (float) UserInfosData.Data.carbPerDay;
     }
