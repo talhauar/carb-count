@@ -4,8 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Utilities;
 
-public class BottomButtons : MonoBehaviour
+public class BottomButtons : AutoSingleton<BottomButtons> 
 {
     public List<Image> buttonsImages;
     
@@ -17,10 +18,21 @@ public class BottomButtons : MonoBehaviour
 
     private Color defaultColor;
     private int currentIndex = -1;
+    public bool ButtonsLocked { get; set; } = false;
 
     private void Awake()
     {
         defaultColor = buttonsImages[0].color;
+        if (UserInfosData.Data.InfosValid()) OnClick(0);
+        else 
+        { 
+            OnClick(2);
+            ButtonsLocked = true;
+        }
+    }
+
+    public void OpenMainPage()
+    {
         OnClick(0);
     }
 
@@ -28,6 +40,7 @@ public class BottomButtons : MonoBehaviour
     public void OnClick(int buttonIndex)
     {
         if (currentIndex == buttonIndex) return;
+        if (ButtonsLocked) return;
         ReserColorToDefaultAll();
         currentIndex = buttonIndex;
         topPageName.text = buttonTexts[currentIndex].text;

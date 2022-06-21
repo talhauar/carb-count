@@ -10,6 +10,8 @@ public class UserManager : AutoSingleton<UserManager>
     [SerializeField] private TMPro.TMP_InputField ageText;
     [SerializeField] private TMPro.TMP_InputField weightText;
     [SerializeField] private TMPro.TMP_InputField heightText;
+    [SerializeField] private GameObject maleSelectedImage;
+    [SerializeField] private GameObject femaleSelectedImage;
 
 
     public void Start()
@@ -34,6 +36,9 @@ public class UserManager : AutoSingleton<UserManager>
         {
             heightText.text = UserInfosData.Data.Height.ToString();
         }
+
+        maleSelectedImage.SetActive(UserInfosData.Data.isMale);
+        femaleSelectedImage.SetActive(!UserInfosData.Data.isMale);
     }
 
     public void SetUserData(UserInfosData userData)
@@ -84,5 +89,21 @@ public class UserManager : AutoSingleton<UserManager>
         if (height == "") return;
         UserInfosData.Data.Height = int.Parse(height);
         UserInfosData.Data.Save();
+    }
+
+    public void OnMale()
+    {
+        UserInfosData.Data.isMale = true;
+        UserInfosData.Data.Save();
+        femaleSelectedImage.SetActive(false);
+        maleSelectedImage.SetActive(true);
+    }
+
+    public void OnFemale()
+    {
+        UserInfosData.Data.isMale = false;
+        UserInfosData.Data.Save();
+        femaleSelectedImage.SetActive(true);
+        maleSelectedImage.SetActive(false);
     }
 }
