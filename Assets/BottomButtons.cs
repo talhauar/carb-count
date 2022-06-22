@@ -13,6 +13,7 @@ public class BottomButtons : AutoSingleton<BottomButtons>
     public List<TMP_Text> buttonTexts;
     public List<GameObject> objectsToActivateOnClick;
     public TMP_Text topPageName;
+    public GameObject AddFoodButton;
 
     public Color clickedColor;
 
@@ -47,6 +48,8 @@ public class BottomButtons : AutoSingleton<BottomButtons>
         buttonsImages[currentIndex].color = clickedColor;
         buttonTexts[currentIndex].color = clickedColor;
         objectsToActivateOnClick[currentIndex].SetActive(true);
+        AddFoodButton.SetActive(buttonIndex == 1);
+        
     }
 
     private void ReserColorToDefaultAll()

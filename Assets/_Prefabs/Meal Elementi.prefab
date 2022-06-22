@@ -762,6 +762,7 @@ MonoBehaviour:
   foodName: {fileID: 3150955950735111872}
   carbs: {fileID: 6234371406426702357}
   foodAmountText: {fileID: 6320085956328683742}
+  timeText: {fileID: 7869398124280582716}
   _food:
     FoodImage: {fileID: 0}
     FoodImageEncrypted: 

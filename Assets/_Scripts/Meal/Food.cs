@@ -84,6 +84,7 @@ public class FoodMeal
     public Food food;
     public FoodAmountType amountType;
     public int amount;
+    public DateTime timeEaten;
 
     public FoodMeal(int _amount, FoodAmountType _amountType, Food _food)
     {
@@ -91,6 +92,7 @@ public class FoodMeal
         this.amount = _amount;
         this.amountType = _amountType;
         this.food = _food;
+        this.timeEaten = DateTime.Now;
     }
 
     public string GetFoodUnitText()

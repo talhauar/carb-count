@@ -25,6 +25,8 @@ public class CarbCalculator : MonoBehaviour
             UserInfosData.Data.carbPerDay = carbsNeededPerDay;
             UserInfosData.Data.Save();
         }
+
+        //Debug.Log($"Test Carbs: {}")
         return true;
     }
 

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-
-public class CarbSlider : MonoBehaviour
+using Utilities;
+public class CarbSlider : AutoSingleton<CarbSlider>
 {
     [SerializeField] private Image sliderImage;
     [SerializeField] private TMPro.TMP_Text carbText;
@@ -25,6 +25,12 @@ public class CarbSlider : MonoBehaviour
         if (sliderImage.fillAmount >= _fillAmount) return;
         sliderImage.fillAmount += _fillAmount * Time.deltaTime;
         if (sliderImage.fillAmount > _fillAmount) sliderImage.fillAmount = _fillAmount;
+    }
+
+    public void ForceUpdateSlider()
+    {
+        _fillAmount = _carbEaten / (float)UserInfosData.Data.carbPerDay;
+        sliderImage.fillAmount = _fillAmount;
     }
 
     private void CountCarbEaten()
