@@ -12,6 +12,12 @@ public class AllFoodsRect : Utilities.AutoSingleton<AllFoodsRect>
         UpdateFoodHistory();
     }
 
+    public void RefreshAllFoods()
+    {
+        AllFoodsManager.DownloadAllFoods();
+        UpdateFoodHistory();
+    }
+
     public void UpdateFoodHistory()
     {
         foreach (Transform child in contentRect)

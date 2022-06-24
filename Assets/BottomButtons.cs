@@ -14,6 +14,7 @@ public class BottomButtons : AutoSingleton<BottomButtons>
     public List<GameObject> objectsToActivateOnClick;
     public TMP_Text topPageName;
     public GameObject AddFoodButton;
+    public GameObject RefreshFoodButton;
 
     public Color clickedColor;
 
@@ -49,6 +50,7 @@ public class BottomButtons : AutoSingleton<BottomButtons>
         buttonTexts[currentIndex].color = clickedColor;
         objectsToActivateOnClick[currentIndex].SetActive(true);
         AddFoodButton.SetActive(buttonIndex == 1);
+        RefreshFoodButton.SetActive(buttonIndex == 1);
         
     }
 

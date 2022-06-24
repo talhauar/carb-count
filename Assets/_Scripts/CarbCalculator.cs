@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,7 +42,7 @@ public class CarbCalculator : MonoBehaviour
         }
         else
         {
-            PopupManager.Instance.CreatePopup("Bilgiler Hatal? !", "Ki?isel bilgilerinizin do?ru oldu?una l�tfen emin olun.", "Tamam", null);
+            PopupManager.Instance.CreatePopup("Bilgiler Hatalı !", "Kişisel bilgilerinizin doğru olduğuna lütfen emin olun.", "Tamam", null);
         }
     }
     
